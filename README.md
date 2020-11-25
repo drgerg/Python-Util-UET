@@ -16,5 +16,6 @@ For example, in this tiny file, you'll find working examples of:
 - setting Python files up so they can be either imported or run as a standalone program
   - this involves use of <code>'if \__name__ == "\__main__":'</code>, which is a really helpful thing to understand.
   - this also involves then defining a function using <code> def </code> and calling that function after the aforementioned 'if'.
+- working example of a signalhandler, which responds to CTRL-C being pressed while the code is running. (there are two 3-second pauses so you can test this out.)
 
 import time,os,logging,argparse,traceback,signal,sys

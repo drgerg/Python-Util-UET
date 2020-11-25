@@ -16,6 +16,7 @@
 #     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 import time,os,logging,argparse,traceback,signal,sys
+from time import sleep
 
 parserET = argparse.ArgumentParser()
 parserET.add_argument('-d', '--debug', help="Turn on debugging output to et.log file.", action="store_true")
@@ -49,8 +50,10 @@ def main(input):
     epoch = float(input)
     gmtTime = time.strftime("%a, %d %b %Y %H:%M:%S %Z", time.gmtime(epoch))
     locTime = time.strftime("%a, %d %b %Y %H:%M:%S %Z", time.localtime(epoch))
-    print('Local time: ' + str(locTime))
-    print('       GMT: ' + str(gmtTime))
+    print('Local time: ' + str(locTime) + ' - Pausing for 3 seconds.')
+    sleep(3)
+    print('       GMT: ' + str(gmtTime) + ' - Pausing for 3 seconds.')
+    sleep(3)
     logger.debug('Local time: ' + str(locTime))
     logger.debug('       GMT: ' + str(gmtTime))
 
