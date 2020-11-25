@@ -1,5 +1,5 @@
 # Python-Util-UET
-Casspop Codelette: A short, useful, educational Python Unix Epoch Time utility.
+Casspop Codelette: A short, useful, educational utility.  Python and Unix Epoch Time
 
 This is what I'm calling a codelette.  It's a little bit of code that does something, but has some value beyond that for learners like me.  (I don't know about you, but I'm always learning.  Always.)
 
@@ -9,8 +9,8 @@ This is what I'm calling a codelette.  It's a little bit of code that does somet
 
 There is nothing awe-inspiring about this codelette, but there is a lot that can be learned from it.
 For example, in this tiny file, you'll find working examples of:
-- logging
-- command line arguments parsing
+- logging: sends data to a file called et.log. I like to use the command <code>tail -fn40 et.log</code> in a terminal and watch it happen.
+- command line arguments parsing. Type <code>./et.py --help</code> for more info.
 - use of the time module to get the current time
 - formatting time strings for human consumption
 - setting Python files up so they can be either imported or run as a standalone program
