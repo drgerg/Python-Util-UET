@@ -17,5 +17,13 @@ For example, in this tiny file, you'll find working examples of:
   - this involves use of <code>'if \__name__ == "\__main__":'</code>, which is a really helpful thing to understand.
   - this also involves then defining a function using <code> def </code> and calling that function after the aforementioned 'if'.
 - working example of a signalhandler, which responds to CTRL-C being pressed while the code is running. (there are two 3-second pauses so you can test this out.)
+- a fair example of a <code>try: except: Exception</code> section (way down at the bottom)
 
-import time,os,logging,argparse,traceback,signal,sys
+The sections at the top (above the <code>## - - - - - TEST CODE BELOW HERE - - - -</code> line) <br>
+and at the bottom (below the <code>## - - - - - - END TEST CODE - - - - - - - </code> line) form the framework for a lot of things I write.
+
+Maybe you'll find this useful in some way.  If so, wonderful.  If not, also wonderful.  
+
+And as always, "It may not be pretty, but it works!"
+
+Enjoy!
