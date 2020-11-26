@@ -27,21 +27,23 @@ ETHome = os.getcwd()
 logger = logging.getLogger(__name__)
 argsET = parserET.parse_args()
 
-logger.debug('Checked for commandline argument: argsET.uet.')
-if argsET.uet:
-    ETRaw = float(argsET.uet)
-    print(' Input UET: ' + str(ETRaw))
-
-
 if argsET.debug:
     logging.basicConfig(filename=ETHome + '/et.log', format='[%(name)s]:%(levelname)s: %(message)s. - %(asctime)s', datefmt='%D %H:%M:%S', level=logging.DEBUG)
     logging.info("Debugging output enabled")
 else:
     logging.basicConfig(filename=ETHome + '/et.log', format='%(asctime)s - %(message)s', datefmt='%a, %d %b %Y %H:%M:%S', level=logging.INFO)
-#
+
 logger.info(" - - - - et.py DATA LOGGING STARTED - - - - ")
-logger.info("  et.py INITIAL CONFIGURATION COMPLETE  ")
 logger.info("'HOME' path is: " + ETHome)
+logger.info("  et.py INITIAL CONFIGURATION COMPLETE  ")
+
+logger.debug('Checked for command line argument: argsET.uet')
+if argsET.uet:
+    ETRaw = float(argsET.uet)
+    print(' Input UET: ' + str(ETRaw))
+    logger.debug('command line argument UET found.')
+#
+
 
 #
 ## - - - - - TEST CODE BELOW HERE - - - -

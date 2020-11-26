@@ -26,4 +26,5 @@ Maybe you'll find this useful in some way.  If so, wonderful.  If not, also wond
 
 And as always, "It may not be pretty, but it works!"
 
-Enjoy!
+Enjoy it like this:<br>
+<code>greg@Valiant:~/pyCode$ ./et.py -d -uet 1606352880.8765097</code>
