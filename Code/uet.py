@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# uet.py v0.6.1 - Python and Unix Epoch Time
+# uet.py - Python and Unix Epoch Time
 #
 # Casspop Codelette: A short, useful, educational utility.
 #
@@ -21,10 +21,14 @@
 #
 import time,os,logging,argparse,traceback,signal,sys
 from time import sleep
-
+#
+## VERSION NUMBER
+uetVer = 'v0.6.1'
+#
 parserET = argparse.ArgumentParser()
 parserET.add_argument('-d', '--debug', help="Turn on debugging output to et.log file.", action="store_true")
-parserET.add_argument('-uet', help="Unix Epoch Time value. Example: ./et.py -uet 1606352895.032772", action="store")
+parserET.add_argument('--version', help="Display version.", action="version", version='%(prog) s ' + uetVer)
+parserET.add_argument('-uet', help="Unix Epoch Time value. Example: ./uet.py -uet 1606352895.032772", action="store")
 UETHome = os.getcwd()
 logger = logging.getLogger(__name__)
 argsET = parserET.parse_args()
@@ -62,6 +66,8 @@ def main(input):
         sleep(3)
         print('       GMT: ' + str(gmtTime) + ' - Pausing for 3 seconds.')
         sleep(3)
+    if not argsET.debug:                                                       # If not in debug mode, drop results into the log.
+        logger.info(str(epoch) + ' = ' + str(locTime))
     logger.debug('Local time: ' + str(locTime))
     logger.debug('       GMT: ' + str(gmtTime))
     return gmtTime,locTime
