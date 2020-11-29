@@ -77,7 +77,7 @@ def SignalHandler(signal, frame):
     logger.info("Shutting down gracefully")
     logger.debug("Wrote to log in SignalHandler")
     logger.info("That's all folks.  Goodbye")
-    logger.info(" - - - - test.py DATA LOGGING STOPPED INTENTIONALLY - - - - ")
+    logger.info(" - - - - uet.py DATA LOGGING STOPPED INTENTIONALLY - - - - ")
     sys.exit(0)
 
 if __name__ == "__main__":
