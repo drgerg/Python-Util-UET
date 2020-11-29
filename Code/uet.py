@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 #
-# Casspop Codelette: A short, useful, educational utility. Python and Unix Epoch Time
+# uet.py v0.6.1 - Python and Unix Epoch Time
+#
+# Casspop Codelette: A short, useful, educational utility.
 #
 #     Copyright (c) 2019,2020 - Gregory Allen Sanders.
 
@@ -23,19 +25,19 @@ from time import sleep
 parserET = argparse.ArgumentParser()
 parserET.add_argument('-d', '--debug', help="Turn on debugging output to et.log file.", action="store_true")
 parserET.add_argument('-uet', help="Unix Epoch Time value. Example: ./et.py -uet 1606352895.032772", action="store")
-ETHome = os.getcwd()
+UETHome = os.getcwd()
 logger = logging.getLogger(__name__)
 argsET = parserET.parse_args()
 
 if argsET.debug:
-    logging.basicConfig(filename=ETHome + '/et.log', format='[%(name)s]:%(levelname)s: %(message)s. - %(asctime)s', datefmt='%D %H:%M:%S', level=logging.DEBUG)
+    logging.basicConfig(filename=UETHome + '/uet.log', format='[%(name)s]:%(levelname)s: %(message)s. - %(asctime)s', datefmt='%D %H:%M:%S', level=logging.DEBUG)
     logging.info("Debugging output enabled")
 else:
-    logging.basicConfig(filename=ETHome + '/et.log', format='%(asctime)s - %(message)s', datefmt='%a, %d %b %Y %H:%M:%S', level=logging.INFO)
+    logging.basicConfig(filename=UETHome + '/uet.log', format='%(asctime)s - %(message)s', datefmt='%a, %d %b %Y %H:%M:%S', level=logging.INFO)
 
-logger.info(" - - - - et.py DATA LOGGING STARTED - - - - ")
-logger.info("'HOME' path is: " + ETHome)
-logger.info("  et.py INITIAL CONFIGURATION COMPLETE  ")
+logger.info(" - - - - uet.py DATA LOGGING STARTED - - - - ")
+logger.info("'HOME' path is: " + UETHome)
+logger.info("  uet.py INITIAL CONFIGURATION COMPLETE  ")
 
 logger.debug('Checked for command line argument: argsET.uet')
 if argsET.uet:
@@ -84,14 +86,14 @@ if __name__ == "__main__":
             main(argsET.uet)                     ## If there's a UET as a command line argument, pass it to the main function here.
         else:
             uet = time.time()                    ## If there is no -uet argument, make a Unix Epoch Time value to share.
-            print("\nYou didn't supply a Unix Epoch Time value.  Here's one: " + str(uet) + '\n Learn more by typing "./et.py --help".\n')
+            print("\nYou didn't supply a Unix Epoch Time value.  Here's one: " + str(uet) + '\n Learn more by typing "./uet.py --help".\n')
             logger.debug('No time value was provided, so we provided this: ' + str(uet))
         pass
-        logger.info(" - - - - et.py COMPLETED ITS MISSION - - - - ")
+        logger.info(" - - - - uet.py COMPLETED ITS MISSION - - - - ")
     except Exception:
         logger.info("Exception caught at bottom of try.", exc_info=True)
         error = traceback.print_exc()
         logger.info(error)
         logger.info("That's all folks.  Goodbye")
-        logger.info(" - - - - et.py DATA LOGGING STOPPED BY EXCEPTION - - - - ")
+        logger.info(" - - - - uet.py DATA LOGGING STOPPED BY EXCEPTION - - - - ")
 
