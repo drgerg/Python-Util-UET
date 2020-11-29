@@ -57,12 +57,14 @@ def main(input):
     epoch = float(input)
     gmtTime = time.strftime("%a, %d %b %Y %H:%M:%S %Z", time.gmtime(epoch))
     locTime = time.strftime("%a, %d %b %Y %H:%M:%S %Z", time.localtime(epoch))
-    print('Local time: ' + str(locTime) + ' - Pausing for 3 seconds.')
-    sleep(3)
-    print('       GMT: ' + str(gmtTime) + ' - Pausing for 3 seconds.')
-    sleep(3)
+    if __name__ == "__main__":
+        print('Local time: ' + str(locTime) + ' - Pausing for 3 seconds.')
+        sleep(3)
+        print('       GMT: ' + str(gmtTime) + ' - Pausing for 3 seconds.')
+        sleep(3)
     logger.debug('Local time: ' + str(locTime))
     logger.debug('       GMT: ' + str(gmtTime))
+    return gmtTime,locTime
 
 ## - - - - - - END TEST CODE - - - - - - - 
 #
